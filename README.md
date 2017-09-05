@@ -1,111 +1,74 @@
 # VS Code setup 
-The goal of this document is to list out configurations and extensions that I use with VS Code. It aims to be more of a concentrated list and less of a "here's the firehose" `awesome-list` (Even though I like awesome lists and all of the work that goes into making them :clap:)
+This is my configurations and extensions for VS Code, my new editor.
 
-> After using Atom for about 2 years, I have switched to using VS Code. Why? VS Code is fast. It's almost on par with Sublime Text. It also comes with a few more "batteries included" ⚡️ features, like a terminal and git integration. With all of this being said, this document contains opinions. If you agree with them, great! If not, that's also great!
-
-### Starting out
+### Begin
 ##### Shortcuts
-If you're coming from Atom, you won't feel too far from home 😉
+basic commands that I use
 
 - `Cmd + P` to open any file
 - `Cmd + Shift + P` to access the command palette
-
-##### Side Bar 
-The following commands are for switching out the view for the Side Bar on the left
-
-- `Cmd + Shift + E` show file explorer
-- `Cmd + Shift + F` show find/replace (global)
-- `Ctrl + Shift + G` show git tools
-- `Cmd + Shift + D` show debugging tools
-- `Cmd + Shift + X` show extensions menu
-
-##### Terminal
-`Ctrl + (backtick)` although, you'd probably have an easier time remapping this to something like `Ctrl + '`
-> Easy, just add a new shortcut 
-
-`Cmd + K`, `Cmd + S`
-
-`{ "key": "ctrl+'", "command": "workbench.action.terminal.toggleTerminal" }`
+- `Cmd + Shift + ´` to access the terminal
+- `Cmd + K + B` to open and close explorer
+- `Cmd + ,` to open settings file
 
 ### Set your User Settings
 Open the user settings file, `Cmd + ,`. Here, you'll find all of the settings that can be modified for VS Code. Once you find one that you want to modify, click next to it and it will be copied over into your own settings file. A few good custom settings to start with are font size and font family.
 
 ```json
 {
-  "editor.fontFamily": "Operator Mono",
-  "editor.fontSize": 14,
-  "editor.tabSize": 2,
-  "workbench.activityBar.visible": false,
-  "javascript.validate.enable": false
+    "editor.fontFamily": "Fira Code Medium",
+    "editor.fontSize": 15,
+    "editor.fontLigatures": true,
+    "editor.lineHeight": 40,
+    "workbench.colorTheme": "Magoon",
+    "workbench.iconTheme": "vs-seti",
+    "workbench.sideBar.location": "left",
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "explorer.openEditors.visible": 0,
+    "workbench.statusBar.visible": false,
+    "vsicons.projectDetection.autoReload": true,
+    "editor.renderIndentGuides": false,
+    "vsicons.dontShowNewVersionMessage": true,
+    "atomKeymap.promptV3Features": true
 }
 ```
-### Why do you disable javascript validation? 
-> `¯\_(ツ)_/¯` I rely on `ESLint`
-
-### Markdown
-If GitHub markdown styles are your thing, [check this out](https://gist.github.com/cdonohue/f53cbf1d2476b14b431d20ca6ba663d5).
-
-### The Sweet Setup
-Now, for the list of extensions. I'll list links to the VSCode marketplace, as well as the install commands. To install any of these, simply press `Cmd + P` and paste the install command listed next to each extension.
+### Extensions
+The list of extensions with links to the VSCode marketplace. To install press `Cmd + P` and paste the install command listed next to each extension.
 
 #### Workspace enhancements
-- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [All Autocomplete](https://marketplace.visualstudio.com/items?itemName=Atishay-Jain.All-Autocomplete)
 
-  `ext install vscode-eslint`
+  `ext install All-Autocomplete`
 
-  > If you use a `.eslintrc` file and have `ESLint` installed either in the project locally or globally, then this _just works_.
+  > Provides autocompletion in Visual Studio Code items based on all open editors.
   
-- [Git Project Manager](https://marketplace.visualstudio.com/items?itemName=felipecaputo.git-project-manager)
+- [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
 
-  `ext install git-project-manager`
+  `ext install auto-close-tag`
   
-  > Damn, this is awesome! `Cmd + Option + P` and start typing a `.git` project. Hit `Enter` to switch to that project in the same window. This supports customization like folder paths to monitor as well as a maximum recursion level to look for `.git` projects.
+  > Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text does.
   
-- [NPM Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+- [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
 
-  `ext install npm-intellisense`
+  `ext install autoimport`
 
-  > Completions of node modules in your `package.json` dependencies? Check.
+  > Automatically finds, parses and provides code actions and code completion for all available imports. Works with Typescript and TSX.
+
+- [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+
+  `ext install beautify`
+
+  > Beautify javascript, JSON, CSS, Sass, and HTML in Visual Studio Code.
   
-- [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+- [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync)
 
-  `ext install path-intellisense`
+  `ext install code-settings-sync`
 
-  > Autocompletion of filenames. And, it even drops the `.js` if you are importing a module.
+  > Previously known as Visual Studio Code Settings Sync.
   
-- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner)
+- [PHP Intellisense - Crane](https://marketplace.visualstudio.com/items?itemName=HvyIndustries.crane)
 
-  `ext install code-runner`
+  `ext install crane`
 
-  > Handy. Highlight code. Run it! It even lets you customize how certain languages should run.
-  
-- [Advanced New File](https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file)
-
-  `ext install advanced-new-file`
-
-  > `Cmd + Option + N`, select a relative directory. Done.
-  
-- [Open in GitHub](https://marketplace.visualstudio.com/items?itemName=sysoev.vscode-open-in-github)
-
-  `ext install vscode-open-in-github`
-
-  > Nice shortcuts when you need to quickly open a file on GitHub (either in the current branch _or_ master). This will even jump to the line number.
-  
-#### Language support and syntax highlighting
-- [Docker Support](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
-
-  `ext install vscode-docker`
-
-  > Create dockerfiles. Syntax highlighting and linting. And, Intellisense on image names from Dockerhub.com
-
-- [GraphQL](https://marketplace.visualstudio.com/items?itemName=mquandalle.graphql)
-
-  `ext install graphql`
-
-  > Syntax highlighting and code snippets for `GraphQL`
-  
-- [File Icons](https://marketplace.visualstudio.com/items?itemName=file-icons.file-icons)
-
-  `ext install file-icons`
-  
-  > Port of `file-icons` package for Atom
+  > Crane is a productivity enhancement extension for Visual Studio Code that provides code-completion for PHP.
