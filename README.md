@@ -72,3 +72,15 @@ The list of extensions with links to the VSCode marketplace. To install press `C
   `ext install crane`
 
   > Crane is a productivity enhancement extension for Visual Studio Code that provides code-completion for PHP.
+
+- [HTML Snippets](https://marketplace.visualstudio.com/items?itemName=abusaidm.html-snippets)
+
+  `ext install html-snippets`
+
+  > This extension adds rich language support for the HTML Markup to VS Code.
+
+- [Laravel Blade Snippets](https://marketplace.visualstudio.com/items?itemName=onecentlin.laravel-blade)
+
+  `ext install laravel-blade`
+
+  > Laravel blade snippets and syntax highlight support for Visual Studio Code.
